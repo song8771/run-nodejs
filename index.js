@@ -15,6 +15,7 @@ const server = http.createServer((req, res) => {
     if (req.method === 'GET') {
         if (req.url === '/') {
             fs.readFile(path.join(__dirname, 'index.html'), 'utf-8', (err, data) => {
+				console.log("TCL: __dirname", __dirname)
                 if(err) {
                     res.statusCode = 500
                     res.end('Error')
@@ -26,6 +27,7 @@ const server = http.createServer((req, res) => {
             }) //현재 경로
         } else if (req.url === '/about') {
                 fs.readFile(path.join(__dirname, 'about.html'), 'utf-8', (err, data) => {
+				console.log("TCL: __dirname", __dirname)
                 if(err) {
                     res.statusCode = 500
                     res.end('Error')
@@ -37,6 +39,7 @@ const server = http.createServer((req, res) => {
             }) //현재 경로
         } else {
                 fs.readFile(path.join(__dirname, 'contact.html'), 'utf-8', (err, data) => {
+				console.log("TCL: __dirname", __dirname)
                 if(err) {
                     res.statusCode = 500
                     res.end('Error')
